@@ -8,19 +8,19 @@ Thanks for agreeing to run through this exercise.
 
 During it you'll be tackling a short challenge based on themes from the real life Overton codebase. You'll be fetching data, displaying it and figuring out how best to make it navigable by users. We're keen to see what you come up with!
 
-You should be able to get through the two parts of the exercise in 60 - 90 minutes. After you've submitted the test we'll schedule a call where you'll have the opportunity to walk us through it.
+You should be able to get through the two parts of the exercise in 60 to 90 minutes. After you've submitted the test we'll schedule a call where you'll have the opportunity to walk us through it.
 
 Please don't spend longer than 90 minutes in total on this: it's completely fine if you don't finish both sections.
-
-The aim isn't for you to produce perfect, production ready code or designs; rather it's for you to be able to get a feel for what Overton does and for you to show us how you approach new projects and problems. We're interested in your thinking as much as the final output and this test gives us lots of jumping off points for chatting later, when you walk us through your work.
 
 ### What we're looking for
 
 We'd like you to code in Javascript and to use HTML and CSS, but you can use any (or no) framework or helper libraries, feel free to do whatever you're most comfortable with.
 
-Don't worry too much about making things look pretty at this point, though a little bit of styling is welcome - we're primarily concerned with the software engineering part of things with this test, and with how your structure and approach.
+Don't worry too much about making things look pretty at this point, though a little bit of styling is welcome.
 
-There's a skeleton structure in this repository, but you don't have to use it: if you've got a framework of choice feel free to delete or overwrite it.
+The aim isn't for you to produce perfect, production ready code or designs; rather it's for you to be able to get a feel for what Overton does and for you to show us how you approach new projects and problems. We're interested in your thinking as much as the final output and this test gives us lots of jumping off points for chatting later, when you walk us through your work.
+
+There's a skeleton structure in this repository, but you don't have to use it: if you've got a framework of choice or would rather start from scratch feel free to edit, delete or otherwise overwrite it.
 
 ## The brief
 
@@ -36,11 +36,11 @@ https://app.overton.io/documents.php?query=title%3A%22air+quality%22+or+%22pollu
 
 You'll need to replace "xxxx" with the API key we've sent you in the email inviting you to take this code test.
 
-The app.overton.io domain supports CORS.
+The API supports CORS and returns data in JSON format. Write some code to fetch the results and then render them.
 
-Write some code to fetch the JSON data from the API and then render the individual documents in the "results" key.
+The JSON returned by the API has three parts, the "query", "facets" and "results" sections. We want to look at the "results" section for now - it should contain an array of 20 items, each representing a document to show as a search result. For now you can ignore the other parts of the output.
 
-There are a lot of fields in the API output for each result, but in this project we only care about these fields, and you can ignore the rest:
+There are a lot of fields in the item representing each search result, but in this project we only care about these fields, and you can ignore the rest:
 
 * title - this is the title of the policy document
 * thumbnail - this is a link to the cover image thumbnail for the document
@@ -49,29 +49,56 @@ There are a lot of fields in the API output for each result, but in this project
 * topics - this is an array of topics that the document covers
 * published_on - this is the data that the document was published on
 
-Use these fields when you're showing each document.
+These are the fields that you should show when you're rendering each document.
 
-Optionally: 
+**Display the list of 20 search results, using the data from the fields above. You can structure the search results however you like.**
 
-* Instead of a timestamp we'd like to show the date in a more human friendly form e.g. 12th August 2022.
-* The topics in the API results are in order of importance. Show only the first few topics by default and let the user click to see more.
+**The topics listed in each result object are in order of importance. Show only the first three topics by default and let the user click to see more.**
 
 ### Section 2 : Exploring the data
 
-In this section we'd like you to add filters to the results so that users can eventually explore them and drill down into different groups of documents. These filters could be in a sidebar or advanced search box or anywhere else you think is appropriate.
+In this section we'd like you to add filters to the results. Users will eventually be able to click on filters to explore the data and drill down into different groups of documents. These filters could be in a sidebar or advanced search box or anywhere else you think is appropriate.
 
-In the "facets" key of the JSON file you retrieved in (1) you'll find information about the different filters available to the user.
+In the "facets" section of the JSON file you retrieved above you'll find information about the different filters available to the user.
 
-We're specifically interested in these four facets, and you can ignore the rest:
+We're specifically interested in these four filters, and you can ignore the rest:
 
 * authors - this is the list of agencies / departments that have published policy documents in the set
 * published_year - these are the years that the documents were published in
 * topics - these are the high level topics that the documents are about
 * sdgcategories - these are the "sustainable development goals" - high level goals set by the United Nations, and often used by policymakers - that are relevant to the documents
 
-Present these filters to the user, showing the different options available in each. You don't need to worry about making them actually work to filter the data yet - we'll talk about that in the interview!
+Each filter object lists the most common options for that field, like so:
 
-Some things to think about that may come up when we chat:
+    "authors": [
+        {
+            "key": "High Speed Two (HS2) Limited",
+            "doc_count": 735
+        },
+        {
+            "key": "Department for Environment, Food & Rural Affairs",
+            "doc_count": 72
+        },
+        {
+            "key": "Environment Agency",
+            "doc_count": 59
+        },
+        {
+            "key": "Public Health England",
+            "doc_count": 35
+        },
+    ... (and more) ...
+    ]
+
+In this case there are 735 documents with an author of "High Speed Two (HS2) Limited", and then 72 with an author of "Department for Environment, Food & Rural Affairs".
+
+Sometimes the filter object might have some extra fields - for example topics has "score" and "bg_count". You can ignore these.
+
+**Display these filters to the user, showing the top five different choices available in each one. Lay these out however you like.**
+
+You don't need to worry about making them actually work to filter the data yet - we'll talk about that in the interview!
+
+Some things to think about that may come up later:
 
 * how might you present the years differently, bearing in mind that Overton has some policy from the 1890s
 * how might your UI handle year ranges if we wanted to add support for queries like "anything published between 2010 and 2020"
