@@ -1,4 +1,4 @@
-# Overton's front end / UI/UX test
+# Overton Front End / UX / UI test
 
 ## Introduction
 
