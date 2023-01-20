@@ -16,7 +16,7 @@ The aim isn't for you to produce perfect, production ready code or designs; rath
 
 ### What we're looking for
 
-We'd like you to code in Javascript and to use HTML and CSS, but you can use any (or no) framework or helper libraries you like.
+We'd like you to code in Javascript and to use HTML and CSS, but you can use any (or no) framework or helper libraries, feel free to do whatever you're most comfortable with.
 
 Don't worry too much about making things look pretty at this point, though a little bit of styling is welcome - we're primarily concerned with the software engineering part of things with this test, and with how your structure and approach.
 
