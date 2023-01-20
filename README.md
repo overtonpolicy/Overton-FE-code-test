@@ -71,7 +71,7 @@ We're specifically interested in these four facets, and you can ignore the rest:
 
 Present these filters to the user, showing the different options available in each. You don't need to worry about making them actually work to filter the data yet - we'll talk about that in the interview!
 
-Some things to think about that may come up in the interview:
+Some things to think about that may come up when we chat:
 
 * how might you present the years differently, bearing in mind that Overton has some policy from the 1890s
 * how might your UI handle year ranges if we wanted to add support for queries like "anything published between 2010 and 2020"
