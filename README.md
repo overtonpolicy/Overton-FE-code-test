@@ -32,15 +32,15 @@ In this section we'd like you to build a simple client that fetches documents fr
 
 The base URL you'll need is here:
 
-https://app.overton.io/documents.php?query=title%3A%22air+quality%22+or+%22pollution%22&source=govuk&sort=citations&format=json&api_key=xxxx
+    https://app.overton.io/documents.php?query=title%3A%22air+quality%22+or+%22pollution%22&source=govuk&sort=citations&format=json&api_key=xxxx
 
 You'll need to replace "xxxx" with the API key we've sent you in the email inviting you to take this code test.
 
-The API supports CORS and returns data in JSON format. Write some code to fetch the results and then render them.
+The API supports CORS and returns data in JSON format. We'd like you to write some code to fetch the results and then render them.
 
-The JSON returned by the API has three parts, the "query", "facets" and "results" sections. We want to look at the "results" section for now - it should contain an array of 20 items, each representing a document to show as a search result. For now you can ignore the other parts of the output.
+The JSON returned by the API has three parts, the "query", "facets" and "results" sections. We want to look at the "results" section - it should contain an array of 20 items, each representing a document to show as a search result. For now you can ignore the other parts of the output.
 
-There are a lot of fields in the item representing each search result, but in this project we only care about these fields, and you can ignore the rest:
+The objects representing each search result have many fields, but for now we only need to care about these ones:
 
 * title - this is the title of the policy document
 * thumbnail - this is a link to the cover image thumbnail for the document
@@ -61,12 +61,11 @@ In this section we'd like you to add filters to the results. Users will eventual
 
 In the "facets" section of the JSON file you retrieved above you'll find information about the different filters available to the user.
 
-We're specifically interested in these four filters, and you can ignore the rest:
+We're specifically interested in these three filters, and you can ignore the rest:
 
 * authors - this is the list of agencies / departments that have published policy documents in the set
 * published_year - these are the years that the documents were published in
 * topics - these are the high level topics that the documents are about
-* sdgcategories - these are the "sustainable development goals" - high level goals set by the United Nations, and often used by policymakers - that are relevant to the documents
 
 Each filter object lists the most common options for that field, like so:
 
@@ -92,11 +91,13 @@ Each filter object lists the most common options for that field, like so:
 
 In this case there are 735 documents with an author of "High Speed Two (HS2) Limited", and then 72 with an author of "Department for Environment, Food & Rural Affairs".
 
-Sometimes the filter object might have some extra fields - for example topics has "score" and "bg_count". You can ignore these.
+The topics fiilter object has a couple of extra fields - "score" and "bg_count" -  but you can ignore these.
 
 **Display these filters to the user, showing the top five different choices available in each one. Lay these out however you like.**
 
 You don't need to worry about making them actually work to filter the data yet - we'll talk about that in the interview!
+
+Once you've finished this you're done - skip down to the "sending us the code" section.
 
 Some things to think about that may come up later:
 
