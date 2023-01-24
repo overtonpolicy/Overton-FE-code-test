@@ -6,7 +6,7 @@
 
 Thanks for agreeing to run through this exercise.
 
-During it you'll be tackling a short challenge based on themes from the real life Overton codebase. You'll be fetching data, displaying it and figuring out how best to make it navigable by users. We're keen to see what you come up with!
+During it you'll be tackling a short challenge based on themes from the real life Overton codebase. You'll be fetching data from our database and then figuring out how best to display and make it navigable by users. We're keen to see what you come up with!
 
 You should be able to get through the two parts of the exercise in 60 to 90 minutes. After you've submitted the test we'll schedule a call where you'll have the opportunity to walk us through it.
 
@@ -14,17 +14,19 @@ Please don't spend longer than 90 minutes in total on this: it's completely fine
 
 ### What we're looking for
 
+The role is a mix of UX / UI and front end development, but this particular test focuses on the latter.
+
 We'd like you to code in Javascript and to use HTML and CSS, but you can use any (or no) framework or helper libraries, feel free to do whatever you're most comfortable with.
 
-Don't worry too much about making things look pretty at this point, though a little bit of styling is welcome.
+Don't worry too much about the design - we can get a feel for this from your portfolio and past projects - but any styling is welcome.
 
-The aim isn't for you to produce perfect, production ready code or designs; rather it's for you to be able to get a feel for what Overton does and for you to show us how you approach new projects and problems. We're interested in your thinking as much as the final output and this test gives us lots of jumping off points for chatting later, when you walk us through your work.
+The aim isn't for you to produce perfect, production ready code or designs; rather it's for you to be able to get a feel for the kind of thing Overton does and for you to show us how you approach new projects and problems. We're interested in your thinking as much as the final output and this test gives us lots of jumping off points for chatting later, when you walk us through your work.
 
-There's a skeleton structure in this repository, but you don't have to use it: if you've got a framework of choice or would rather start from scratch feel free to edit, delete or otherwise overwrite it.
+There's a very simple skeleton structure in this repository, but you don't have to use it: if you've got a framework of choice or would rather start from scratch feel free to edit, delete or otherwise overwrite it.
 
 ## The brief
 
-Imagine you're Overton's latest front end hire (congrats!). We've just had a call with a big climate change NGO - they'd like us to quicky prototype an app that journalists and researchers can use to see all of the latest thinking on air quality from the UK government. The app doesn't need to look polished or designed, but should be easy to use and understand.
+Imagine you're Overton's latest front end hire (congrats!). We've just had a call with a big climate change NGO - they'd like us to quicky prototype an app that journalists and researchers can use to see all of the latest thinking on air quality from the UK government. The app doesn't need to look too polished or designed, but should be easy to use and understand.
 
 ### Section 1 : Fetching and rendering data
 
@@ -101,6 +103,7 @@ Once you've finished this you're done - skip down to the "sending us the code" s
 
 Some things to think about that may come up later:
 
+* over time we might want to show many more filters, how might this impact your design
 * how might you present the years differently, bearing in mind that Overton has some policy from the 1890s
 * how might your UI handle year ranges if we wanted to add support for queries like "anything published between 2010 and 2020"
 * if we were to break out the topics onto their own page, how might you present them in a useful and/or visually interesting or appealing way?
